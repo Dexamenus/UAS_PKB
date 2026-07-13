@@ -14,7 +14,54 @@ function App() {
       const res = await axios.get("http://localhost:5000/api/lemari");
       setLemari(res.data);
     } catch (error) {
-      console.error(error);
+      console.error("Gagal terhubung ke server/database. Memuat data dummy...", error);
+      setLemari([
+        {
+          _id: "dummy1",
+          nama: "Kaos Hitam Polos",
+          jenis: "Atasan",
+          kategori: "Santai",
+          status: "Bersih",
+          terakhir_dipakai: new Date().toISOString(),
+          created_at: new Date().toISOString()
+        },
+        {
+          _id: "dummy2",
+          nama: "Celana Jeans Biru",
+          jenis: "Bawahan",
+          kategori: "Santai",
+          status: "Bersih",
+          terakhir_dipakai: new Date().toISOString(),
+          created_at: new Date().toISOString()
+        },
+        {
+          _id: "dummy3",
+          nama: "Kemeja Putih",
+          jenis: "Atasan",
+          kategori: "Formal",
+          status: "Bersih",
+          terakhir_dipakai: new Date().toISOString(),
+          created_at: new Date().toISOString()
+        },
+        {
+          _id: "dummy4",
+          nama: "Sepatu Sneakers",
+          jenis: "Sepatu",
+          kategori: "Bebas",
+          status: "Bersih",
+          terakhir_dipakai: new Date().toISOString(),
+          created_at: new Date().toISOString()
+        },
+        {
+          _id: "dummy5",
+          nama: "Jaket Denim",
+          jenis: "Outer",
+          kategori: "Santai",
+          status: "Kotor",
+          terakhir_dipakai: new Date().toISOString(),
+          created_at: new Date().toISOString()
+        }
+      ]);
     }
   };
 
