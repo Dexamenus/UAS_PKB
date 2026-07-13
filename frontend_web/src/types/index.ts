@@ -4,4 +4,6 @@ export interface Baju {
   jenis: string;
   kategori: string;
   status: string;
+  terakhir_dipakai?: string;
+  created_at?: string;
 }
