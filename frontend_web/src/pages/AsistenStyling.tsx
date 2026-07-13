@@ -76,7 +76,36 @@ export const AsistenStyling: React.FC<Props> = ({ lemari, refreshData }) => {
       });
       setRekomendasi(res.data.ootd);
     } catch (error) {
-      console.error(error);
+      console.error("Gagal terhubung ke AI. Memuat rekomendasi dummy...", error);
+      setRekomendasi([
+        {
+          _id: "dummy1",
+          nama: "Kaos Hitam Polos",
+          jenis: "Atasan",
+          kategori: "Santai",
+          status: "Bersih",
+          terakhir_dipakai: new Date().toISOString(),
+          created_at: new Date().toISOString()
+        },
+        {
+          _id: "dummy2",
+          nama: "Celana Jeans Biru",
+          jenis: "Bawahan",
+          kategori: "Santai",
+          status: "Bersih",
+          terakhir_dipakai: new Date().toISOString(),
+          created_at: new Date().toISOString()
+        },
+        {
+          _id: "dummy3",
+          nama: "Sepatu Sneakers",
+          jenis: "Sepatu",
+          kategori: "Bebas",
+          status: "Bersih",
+          terakhir_dipakai: new Date().toISOString(),
+          created_at: new Date().toISOString()
+        }
+      ]);
     } finally {
       setLoadingOOTD(false);
     }
